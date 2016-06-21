@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkbox</title>
+	<style>
+		li{
+			display:block;
+			padding:20px 0;
+		}
+		[type="checkbox"]{
+			display:none;
+		}
+		/*Checkbox_1*/
+		.checkbox_1+label{
+			display: inline-block;
+			background: #FFF;
+			border:1px solid #C1CACA;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 -15px 10px -12px rgba(0,0,0,0.05);
+			width: 1em;
+			height: 1em;
+			border-radius: 5px;
+			position: relative;
+		}
+		.checkbox_1+label:active{
+			box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 3px rgba(0,0,0,1);
+		}
+		.checkbox_1:checked+label{
+			background-color: #ECF2F7;
+			border:1px solid #92A1AC;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 3px rgba(0,0,0,1);
+		}
+		.checkbox_1:checked+label:after{
+			content:"\2714";
+			position:absolute;
+			top: 0;
+			width: 100%;
+			text-align: center;
+			padding: 1px 0 0 0;
+		}
+		/*Checkbox_2*/
+		.checkbox_2+label{
+			display:inline-block;
+			width: 113px;
+			border-radius:1000px;
+			color:#FFF;
+			background: #F37900;
+			padding: 18px 20px;
+			font-size: 1.5em;
+			line-height: 1.5em;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.3), inset 0 50px 37px -30px rgba(255,255,255,.3);
+			border-top: 1px solid #ECA14F;
+			border-bottom: 1px solid #552B09;
+			position: relative;
+			text-shadow: 0 1px 0 rgba(0,0,0,.2);
+		}
+		.checkbox_2+label:hover, .checkbox_2+label:active{
+			border-top: 1px solid #FC8C1E;
+			background: #FC8C1E;
+			box-shadow: 0 0 13px rgba(0,0,0,.6), inset 0 -50px 37px -30px rgba(255, 222, 197, 0.07);
+		}
+		
+		.checkbox_2+label:after{
+			content:"";
+			width: 32px;
+			height: 32px;
+			border-radius: 16px;
+			position:absolute;
+			top: 50%;
+			margin-top: -16px;
+			right: 16px;
+			background: rgba(0,0,0,.4);
+		}
+		.checkbox_2+label:before{
+			content:"";
+			width: 20px;
+			height: 20px;
+			border-radius: 10px;
+			position:absolute;
+			top: 50%;
+			margin-top: -10px;
+			right: 22px;
+			background: #FFF;
+			z-index: 2;
+			box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+			display: none;
+		}
+		.checkbox_2:hover +label:before{
+			box-shadow: none;
+		}
+		.checkbox_2:checked+label:before{
+			display: inline-block;
+		}
+		/*Checkbox_3*/
+		.checkbox_3+label{
+			width: 60px;
+			height: 30px;
+			border-radius:15px;
+			box-shadow: inset 0 0 1px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3);
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+		}
+		.checkbox_3+label:before{
+			content:"";
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background: #FFF;
+			position:absolute;
+			top: 0;
+			left: 0;
+			box-shadow: 0 1px 1px rgba(0,0,0,0.1), inset 0 0 1px rgba(0,0,0,0.1);
+			z-index: 10;
+			transition: all 1s;
+		}
+		.checkbox_3+label:after{
+			content:"";
+			width: 100%;
+			height: 100%;
+			border-radius: 15px;
+			position: absolute;
+			background: -webkit-linear-gradient(left, #4CDA60 50%, rgba(0,0,0,0.05) 50%);
+			z-index: 2;
+			top: 0;
+			left: 0;
+			background-size: 150% 100%;
+			background-position: 100% 0;
+			transition: all 1s;
+		}
+		.checkbox_3:checked+label:before{
+			transform: translateX(30px);
+		}
+		.checkbox_3:checked+label:after{
+			background-position: 0% 0%;
+		}
+
+		/*Checkbox_4*/
+		.checkbox_4+label{
+			width: 60px;
+			height: 30px;
+			border-radius:3px;
+			box-shadow: inset 0 0 1px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3);
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			text-align:center;
+			letter-spacing: 10px
+		}
+		.checkbox_4+label:before{
+			content:"";
+			width: 30px;
+			height: 30px;
+			border-radius: 3px;
+			background: #FFF;
+			position:absolute;
+			top: 0;
+			left: 0;
+			box-shadow: 0 1px 1px rgba(0,0,0,0.1), inset 0 0 1px rgba(0,0,0,0.1);
+			z-index: 10;
+			transition: all 1s;
+		}
+		.checkbox_4+label:after{
+			padding:2px 5px;
+			content:"开关";
+			color:#64DD17;
+			font-family: "Microsoft YaHei", Arial;
+			width: 100%;
+			height: 100%;
+			border-radius: 3px;
+			position: absolute;
+			background: -webkit-linear-gradient(left, #64DD17 50%, #F4FF81 50%);
+			z-index: 2;
+			top: 0;
+			left: 0;
+			background-size: 150% 100%;
+			background-position: 100% 0;
+			transition: all 1s;
+		}
+		.checkbox_4:checked+label:before{
+			transform: translateX(30px);
+		}
+		.checkbox_4:checked+label:after{
+			background-position: 0% 0%;
+			color: #F4FF81;
+		}
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li> 勾选<br>
+			<input type="checkbox" id="checkbox_1" class="checkbox_1">
+			<label for="checkbox_1"></label>
+		</li>
+		<li> 单按钮<br>
+			<input type="checkbox" id="checkbox_2" class="checkbox_2">
+			<label for="checkbox_2">确认</label>
+		</li>
+		<li> 移动开关<br>
+			<input type="checkbox" id="checkbox_3" class="checkbox_3">
+			<label for="checkbox_3"></label>
+		</li>
+		<li> 开启和关闭<br>
+			<input type="checkbox" id="checkbox_4" class="checkbox_4">
+			<label for="checkbox_4"></label>
+		</li>
+	</ul>
+</body>
+</html>
